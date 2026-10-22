@@ -77,7 +77,11 @@ export function Hero({ phone, bubbles, copy }: { phone: ReactNode; bubbles: Reac
       if (hintRef.current) hintRef.current.style.opacity = String(1 - stage(p, 0, 0.08));
       if (phone) {
         // Starts peeking under the buttons, rises to the centre of the screen.
-        phone.style.translate = `-50% calc(-50% + ${lerp(window.innerHeight * 0.42, 0, tPhone).toFixed(1)}px)`;
+        // Starts just under the buttons (measured, so it never covers them on a
+        // short screen) and rises to the centre of the screen.
+        const h = phone.offsetHeight;
+        const startY = text ? text.offsetTop + text.offsetHeight + 36 - phone.offsetTop : window.innerHeight * 0.42 - h / 2;
+        phone.style.translate = `-50% ${lerp(startY, -h / 2, tPhone).toFixed(1)}px`;
         phone.style.scale = String(lerp(0.9, 1, tPhone));
       }
       if (markRef.current) {
@@ -102,9 +106,10 @@ export function Hero({ phone, bubbles, copy }: { phone: ReactNode; bubbles: Reac
       if (window.innerWidth < 1024) return;
       const rtl = document.documentElement.dir === "rtl";
       if (phoneRef.current) {
-        phoneRef.current.style.translate = "-50% -50%";
-        phoneRef.current.style.scale = "1";
-        phoneRef.current.style.top = "calc(50% + 140px)";
+        const text = textRef.current;
+        const phone = phoneRef.current;
+        if (text) phone.style.translate = `-50% ${text.offsetTop + text.offsetHeight + 36 - phone.offsetTop}px`;
+        phone.style.scale = "1";
       }
       CARDS.forEach((c, i) => {
         const el = cardRefs.current[i];
@@ -214,7 +219,7 @@ export function Hero({ phone, bubbles, copy }: { phone: ReactNode; bubbles: Reac
           {/* Phone: in the flow on mobile, centred and driven by the scroll on desktop. */}
           <div
             ref={phoneRef}
-            className="relative mt-12 mb-16 w-[280px] sm:w-[300px] lg:absolute lg:left-1/2 lg:top-[calc(50%+35px)] lg:mt-0 lg:mb-0 lg:w-[min(300px,calc((100vh-110px)*0.47))] lg:[translate:-50%_calc(-50%_+_42vh)] lg:scale-[0.9]"
+            className="relative mt-12 mb-16 w-[280px] sm:w-[300px] lg:absolute lg:left-1/2 lg:top-[calc(50%+35px)] lg:mt-0 lg:mb-0 lg:w-[min(300px,calc((100vh-110px)*0.47))] lg:[translate:-50%_calc(660px-50vh)] lg:scale-[0.9]"
             style={{ willChange: "translate, scale" }}
           >
             <div style={{ animation: "wu-rise 1000ms var(--ease-out-expo) 520ms both" }}>
