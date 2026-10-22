@@ -4,7 +4,7 @@
  */
 export const SITE = {
   name: "WashUp",
-  url: "https://washup.app", // TODO: production domain
+  url: "https://washup-eg.vercel.app", // TODO: switch to the custom domain once it is bought
   /** Partner portal (vendor app on Vercel). */
   partnerPortalUrl: "https://washup-vendor.vercel.app/login",
   /** TODO: real store listings once the customer app is published. */
