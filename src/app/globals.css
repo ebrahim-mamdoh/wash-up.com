@@ -1,0 +1,399 @@
+@import "tailwindcss" source("../");
+
+/*
+  WashUp identity, taken from the logo: a sky-blue ribbon and a deep navy ribbon
+  forming the W, the "WASH" wordmark in navy ink and "UP" in bright blue.
+  Scanning is limited to src/ (same reason as Qhub: never scan .next output).
+*/
+
+@theme {
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-display-latin), var(--font-body), sans-serif;
+
+  /* Brand blue ("UP" in the wordmark) */
+  --color-brand-50: #eef7ff;
+  --color-brand-100: #d9edff;
+  --color-brand-200: #bce0ff;
+  --color-brand-300: #8ecdff;
+  --color-brand-400: #59b1ff;
+  --color-brand-500: #3392ff;
+  --color-brand-600: #1769e8; /* primary — 4.9:1 on white, AA for small text */
+  --color-brand-700: #145ee1;
+  --color-brand-800: #174cb6;
+  --color-brand-900: #19438f;
+
+  /* Sky ribbon (light side of the W) */
+  --color-sky-ribbon: #38b6ff;
+  /* Navy ribbon and ink ("WASH") */
+  --color-navy-500: #1a3f8f;
+  --color-navy-700: #0f2a66;
+  --color-navy-800: #0b2152;
+  --color-navy-900: #071634;
+  --color-navy-950: #040c1f;
+
+  /* Water accent for foam, droplets and live states */
+  --color-aqua: #22d3ee;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.36, 0.64, 1);
+}
+
+:root {
+  --bg: #f7fafd;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #eff4fa;
+  --fg: #0b1b3a;
+  --fg-muted: #45536b;
+  --fg-subtle: #5f6b80;
+  --border: #e1e8f1;
+  --border-strong: #cfd9e6;
+  --grid-line: rgba(11, 33, 82, 0.05);
+  --noise-opacity: 0.03;
+  --shadow-card: 0 1px 2px rgba(11, 33, 82, 0.05), 0 10px 28px -14px rgba(11, 33, 82, 0.18);
+  --shadow-float: 0 26px 52px -22px rgba(11, 33, 82, 0.28), 0 2px 8px rgba(11, 33, 82, 0.05);
+  --shadow-hero: 0 50px 90px -36px rgba(11, 33, 82, 0.4);
+
+  --grad-brand: linear-gradient(135deg, #38b6ff 0%, #1b74f5 52%, #0f2a66 100%);
+  --grad-brand-soft: linear-gradient(135deg, #3fa9ff 0%, #1b74f5 100%);
+  --grad-ink: radial-gradient(120% 90% at 50% 0%, #133a86 0%, #0b2152 45%, #040c1f 100%);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+  --shadow-hero: var(--shadow-hero);
+}
+
+/* Dark "ink" bands (partners, journey). Re-points the surface tokens so every
+   shared component inside reads correctly without its own dark variant. */
+.surface-ink {
+  --bg: #071634;
+  --bg-elevated: rgba(255, 255, 255, 0.06);
+  --bg-subtle: rgba(255, 255, 255, 0.04);
+  --fg: #f2f7ff;
+  --fg-muted: #b4c3dc;
+  --fg-subtle: #93a4c2;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --grid-line: rgba(142, 205, 255, 0.07);
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 18px 40px -20px rgba(0, 0, 0, 0.6);
+  --color-brand-600: #59b1ff;
+  background-image: var(--grad-ink);
+  color: var(--fg);
+}
+
+@utility bg-brand-grad {
+  background-color: var(--color-brand-600);
+  background-image: var(--grad-brand-soft);
+}
+
+@utility bg-brand-deep {
+  background-color: var(--color-navy-700);
+  background-image: var(--grad-brand);
+}
+
+@utility text-brand-grad {
+  background-image: linear-gradient(100deg, #38b6ff 0%, #1b74f5 55%, #174cb6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brand-600) 24%, transparent);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  /* Latin headings use the wide display face of the wordmark; Arabic keeps
+     Thmanyah, whose Latin glyphs would otherwise win in English. */
+  :lang(en) h1,
+  :lang(en) h2 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: center;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(var(--grid-line) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+
+  .mask-radial-center {
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 80%);
+    mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 80%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to left, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  }
+
+  .texture-noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /*
+    Below-the-fold sections skip style, layout and paint until they near the
+    viewport. On a long page this is the difference between a first paint at
+    5s and under 2s on a mid-range phone. `auto` remembers the real height
+    once rendered, so anchors and scroll position stay stable. Never on pinned
+    (sticky) scenes.
+  */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Western digits that keep their own order inside Arabic sentences. */
+  .num {
+    font-variant-numeric: tabular-nums;
+    unicode-bidi: isolate;
+  }
+}
+
+/*
+  ===== Reveal on scroll =====
+  Markup comes from <Reveal> / <WordsReveal>; <Effects /> adds `data-shown`.
+  The hidden state only applies under `.js` (set by an inline script before
+  paint), so without JavaScript every block is simply visible.
+*/
+[data-reveal]:not([data-reveal="words"]) {
+  transition:
+    opacity var(--rdur, 800ms) var(--ease-out-expo) var(--rd, 0ms),
+    transform var(--rdur, 800ms) var(--ease-out-expo) var(--rd, 0ms);
+}
+.js [data-reveal]:not([data-reveal="words"]):not([data-shown]) {
+  opacity: 0;
+}
+.js [data-reveal="up"]:not([data-shown]) {
+  transform: translate3d(0, 28px, 0);
+}
+.js [data-reveal="down"]:not([data-shown]) {
+  transform: translate3d(0, -28px, 0);
+}
+/* "start" is the reading start: from the right in Arabic, the left in English. */
+.js [data-reveal="start"]:not([data-shown]) {
+  transform: translate3d(calc(36px * var(--dir-x, 1)), 0, 0);
+}
+.js [data-reveal="end"]:not([data-shown]) {
+  transform: translate3d(calc(-36px * var(--dir-x, 1)), 0, 0);
+}
+.js [data-reveal="zoom"]:not([data-shown]) {
+  transform: scale(0.94);
+}
+
+.wr-word {
+  display: inline-block;
+  transition:
+    opacity 620ms var(--ease-out-expo) calc(var(--wd, 0ms) + var(--i, 0) * var(--ws, 55ms)),
+    transform 620ms var(--ease-out-expo) calc(var(--wd, 0ms) + var(--i, 0) * var(--ws, 55ms));
+}
+.js [data-reveal="words"]:not([data-shown]) .wr-word {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* ===== Shared keyframes ===== */
+@keyframes wu-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Entrance for the hero headline: motion + blur, never opacity — a text block
+   that starts at opacity 0 is skipped as an LCP candidate, delaying LCP by seconds. */
+@keyframes wu-focus {
+  from {
+    transform: translateY(16px);
+    filter: blur(8px);
+  }
+  to {
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes wu-pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes wu-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+/* Bubbles rise and sway; the per-bubble delay/duration come from inline vars. */
+@keyframes wu-bubble {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--bubble-opacity, 0.7);
+  }
+  50% {
+    transform: translate3d(var(--sway, 14px), -45vh, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(0, -95vh, 0) scale(1.08);
+    opacity: 0;
+  }
+}
+
+@keyframes wu-shine {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+@keyframes wu-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes wu-pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes wu-dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wu-spray {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scaleY(1.05);
+  }
+}
+
+@keyframes wu-orb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(5%, -7%, 0) scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+.animate-float {
+  animation: wu-float 6s ease-in-out infinite;
+}
+
+.animate-orb {
+  animation: wu-orb 14s ease-in-out infinite;
+}
+
+/* Tracks are laid out LTR on purpose (dir="ltr" on the wrapper), so one keyframe serves both languages. */
+.marquee-track {
+  animation: wu-marquee 42s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

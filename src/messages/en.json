@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "title": "WashUp — Book your car wash in one tap",
+    "description": "WashUp is the car wash booking platform: find trusted washes near you, compare services, prices and ratings, book an exact time slot and follow your car live.",
+    "keywords": ["car wash", "car wash booking", "car wash near me", "WashUp", "car wash app", "Cairo car wash"],
+    "partnersTitle": "WashUp for Partners — Run your car wash, grow your bookings",
+    "partnersDescription": "Join the WashUp network: new bookings from the app, plus a complete operations portal for orders, schedule, team, finance and reviews."
+  },
+  "nav": {
+    "home": "Home",
+    "how": "How it works",
+    "features": "Features",
+    "services": "Services",
+    "partners": "For partners",
+    "faq": "FAQ",
+    "download": "Get the app",
+    "partnerLogin": "Partner login",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "العربية",
+    "languageLabel": "Switch to Arabic",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "label": "WashUp introduction",
+    "badge": "Egypt's car wash booking platform",
+    "headline": ["Your", "car", "wash,", "one", "tap", "away"],
+    "highlightFrom": 3,
+    "lede": "Find trusted car washes around you, compare services, prices and ratings, and book an exact time slot — then follow your car live until it's ready and shining.",
+    "ctaDownload": "Get the app",
+    "ctaPartners": "List your car wash",
+    "scroll": "Scroll to explore",
+    "cards": {
+      "nearbyTitle": "3 washes nearby",
+      "nearbyBody": "Closest one is 2.1 km away",
+      "slotTitle": "You're booked",
+      "slotBody": "Today 10:30 AM — Full wash",
+      "ratingTitle": "4.9 rating",
+      "ratingBody": "from 320 customers",
+      "offerTitle": "20% off",
+      "offerBody": "on interior cleaning today",
+      "readyTitle": "Your car is ready!",
+      "readyBody": "Pick it up at Clean Drive"
+    }
+  },
+  "app": {
+    "location": "Cairo, Egypt",
+    "search": "Search a car wash or service",
+    "categories": ["All", "Exterior", "Interior", "Full"],
+    "nearby": "Car washes near you",
+    "seeAll": "See all",
+    "book": "Book",
+    "min": "min",
+    "km": "km",
+    "tabs": ["Home", "Bookings", "Favorites", "Profile"],
+    "washes": [
+      { "name": "Clean Drive", "area": "Nasr City" },
+      { "name": "Auto Shine", "area": "Heliopolis" },
+      { "name": "Pro Wash", "area": "New Cairo" }
+    ]
+  },
+  "problem": {
+    "eyebrow": "A problem we all know",
+    "title": "Washing your car shouldn't take your whole afternoon",
+    "highlight": ["afternoon"],
+    "story": "We've all been there: driving from wash to wash, waiting in a line with no end in sight, asking the price after the job is done, and sitting around with no idea when your car will be ready. WashUp exists to end all of that.",
+    "storyHighlight": ["WashUp"],
+    "before": "Before",
+    "after": "With WashUp",
+    "pairs": [
+      { "before": "Driving around asking", "after": "The nearest washes on a map, with ratings" },
+      { "before": "Long lines, no appointment", "after": "A time slot booked to the minute" },
+      { "before": "Price revealed after the wash", "after": "A clear price before you book" },
+      { "before": "Waiting with zero updates", "after": "A notification at every stage" }
+    ]
+  },
+  "steps": {
+    "eyebrow": "How it works",
+    "title": "Three steps to a shining car",
+    "highlight": ["shining"],
+    "lede": "From opening the app to picking up your car — everything clear, priced and tracked.",
+    "items": [
+      { "title": "Open the app", "body": "Start your WashUp journey — your location finds the washes around you." },
+      { "title": "Pick a nearby wash", "body": "Choose from the best washes in your area by services, prices and ratings." },
+      { "title": "Book in one tap", "body": "Choose the service and a slot that's actually free, and save your time." },
+      { "title": "Track and pick up", "body": "A notification at every stage until your car is ready and shining." }
+    ]
+  },
+  "features": {
+    "eyebrow": "For car owners",
+    "title": "Everything your car wash needs, in one app",
+    "highlight": ["one", "app"],
+    "lede": "We built WashUp around your day: choose with confidence, book in seconds, and know exactly what's happening.",
+    "items": [
+      { "key": "map", "title": "Nearby washes on a map", "body": "Set your location and see the washes around you by distance, rating and estimated service time." },
+      { "key": "compare", "title": "Compare before you choose", "body": "Services, prices, amenities — AC, Wi-Fi, covered area — and ratings on one screen." },
+      { "key": "slot", "title": "Booked to the minute", "body": "Slots that are really free, based on each wash's capacity and bays. No calls, no waiting." },
+      { "key": "live", "title": "Follow your car live", "body": "From confirmation to check-in, washing and ready — with instant notifications." },
+      { "key": "offers", "title": "Offers applied for you", "body": "Car wash and WashUp offers come off your price automatically, no codes needed." },
+      { "key": "garage", "title": "All your cars in one place", "body": "Save your plates and car colors, and book for any of them in seconds." },
+      { "key": "pay", "title": "Pay your way", "body": "Cash, card or online, with a clear receipt for every service and add-on." },
+      { "key": "reviews", "title": "Genuine reviews", "body": "Rate the service after every wash; reviews are moderated so they stay trustworthy." },
+      { "key": "reschedule", "title": "Reschedule easily", "body": "Move or cancel a booking in the app before your slot — the wash knows instantly." }
+    ]
+  },
+  "journey": {
+    "eyebrow": "Live tracking",
+    "title": "Know where your car is, every moment",
+    "highlight": ["every", "moment"],
+    "lede": "Six clear stages from booking to pick-up, each one with a notification.",
+    "order": "Order",
+    "service": "Full wash + polish",
+    "wash": "Clean Drive — Nasr City",
+    "stages": [
+      { "title": "Booked", "body": "Your order reaches the wash with the service, time and price.", "note": "Awaiting confirmation" },
+      { "title": "Confirmed", "body": "The wash confirmed your slot — your place is held.", "note": "Confirmed — 10:30 AM" },
+      { "title": "Checked in", "body": "Your arrival is logged and your car is in the queue.", "note": "Arrived" },
+      { "title": "Washing", "body": "A dedicated washer has started on your car.", "note": "In service" },
+      { "title": "Ready", "body": "An instant notification the moment it's done.", "note": "Completed" },
+      { "title": "Pay & rate", "body": "Pay your way and rate the experience in seconds.", "note": "Paid" }
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "From a quick rinse to complete care",
+    "highlight": ["complete", "care"],
+    "lede": "Every wash lists its services and add-ons with prices — you pick what your car needs.",
+    "items": [
+      { "key": "exterior", "title": "Exterior wash", "body": "Foam, pressure rinse, drying and a glossy finish for body and rims." },
+      { "key": "interior", "title": "Interior cleaning", "body": "Vacuuming, dashboard, doors and inner glass." },
+      { "key": "full", "title": "Inside & out", "body": "The full package for a car that's clean from every side." },
+      { "key": "deep", "title": "Deep cleaning", "body": "Detailed care for seats, headliner and hard-to-reach spots." }
+    ],
+    "addonsTitle": "Plus add-ons, your way",
+    "addons": ["Polishing", "Protective wax", "Engine bay", "Seat cleaning", "Rim polish", "Air freshener", "Headliner", "Bug removal", "Headlight polish", "Trunk cleaning"]
+  },
+  "partners": {
+    "eyebrow": "For car wash owners",
+    "title": "Put your wash on the map — and run it all from one screen",
+    "highlight": ["one", "screen"],
+    "lede": "WashUp isn't just a booking app — it's a complete operating system for your car wash: new bookings from the app, and every order, teammate and number in one portal.",
+    "points": [
+      "A live board for every car inside your wash",
+      "App bookings, walk-ins and phone orders in one place",
+      "Schedule and capacity with no double bookings",
+      "Team, permissions, shifts and day closing",
+      "Revenue, commission and payouts, clearly",
+      "Multiple branches under one account"
+    ],
+    "cta": "Learn about partnering",
+    "login": "Partner login",
+    "toastTitle": "New order from the app",
+    "toastBody": "QLM 482 · Inside & out · 10:30 AM",
+    "dashboard": {
+      "title": "Live operations",
+      "branch": "Nasr City branch",
+      "kpis": [
+        { "label": "Revenue today", "value": "4,850", "unit": "EGP" },
+        { "label": "Cars inside", "value": "6", "unit": "" },
+        { "label": "Orders today", "value": "38", "unit": "" },
+        { "label": "Rating", "value": "4.8", "unit": "" }
+      ],
+      "columns": ["Upcoming", "Waiting", "In service", "Awaiting payment"],
+      "sources": { "app": "App", "walk_in": "Walk-in", "phone": "Phone" }
+    }
+  },
+  "trust": {
+    "eyebrow": "A platform that protects both sides",
+    "title": "Trust, built into the system itself",
+    "highlight": ["Trust,"],
+    "lede": "Behind the app is a team and an admin console that review and follow up, so customers get a great experience and partners get treated fairly.",
+    "items": [
+      { "key": "verified", "title": "Verified washes", "body": "Every wash's details, location and services are reviewed before it appears in the app." },
+      { "key": "price", "title": "System-calculated prices", "body": "Prices come from services and offers automatically — no surprises at checkout." },
+      { "key": "reviews", "title": "Moderated reviews", "body": "Abusive or reported reviews are reviewed, and washes can reply to their customers." },
+      { "key": "support", "title": "Complaints that get resolved", "body": "Every complaint has an owner and clear stages until it's closed." },
+      { "key": "finance", "title": "Transparent finance", "body": "Clear commission and recorded payouts that partners follow from their portal." },
+      { "key": "audit", "title": "A trail for every action", "body": "Every action on orders and payments is logged with who did it and when." }
+    ]
+  },
+  "numbers": {
+    "eyebrow": "WashUp in numbers",
+    "title": "Simple for drivers. Powerful for washes.",
+    "highlight": ["Simple", "Powerful"],
+    "items": [
+      { "value": 3, "suffix": "", "label": "steps to book" },
+      { "value": 6, "suffix": "", "label": "live tracking stages per order" },
+      { "value": 3, "suffix": "", "label": "order channels: app, walk-in and phone" },
+      { "value": 100, "suffix": "%", "label": "clear price before you confirm" }
+    ]
+  },
+  "download": {
+    "eyebrow": "The app",
+    "title": "Your favorite car wash, in your pocket",
+    "highlight": ["pocket"],
+    "lede": "Get WashUp and book your next wash in under a minute.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "getOn": "Get it on",
+    "soon": "Coming soon to the stores"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Got a question? The answer's probably here",
+    "highlight": ["answer's"],
+    "owners": "For car owners",
+    "partners": "For car washes",
+    "ownersItems": [
+      { "q": "How do I book a wash?", "a": "Open the app, pick a nearby wash, choose the service, add-ons and a free slot, then confirm. You'll get a notification when the wash confirms your time." },
+      { "q": "Is the price I see the price I pay?", "a": "Yes. The price is calculated by the system before you confirm, including the service, add-ons and any available offer. Anything you add at the wash shows clearly on your receipt." },
+      { "q": "Can I reschedule or cancel?", "a": "Yes, from the booking screen in the app before your slot — the wash is notified right away." },
+      { "q": "How will I know my car is ready?", "a": "The app notifies you at every stage: confirmation, check-in, washing started and the moment your car is ready." },
+      { "q": "How can I pay?", "a": "Cash, card or online depending on what the wash supports, with a clear receipt." },
+      { "q": "Are the car washes trustworthy?", "a": "Every wash is reviewed before joining the platform, and ratings come from real customers after their wash and are moderated." }
+    ],
+    "partnersItems": [
+      { "q": "How do I join WashUp as a car wash?", "a": "Submit an application, our team reviews your details, and once approved your account is activated so you can set up branches and services and start taking bookings." },
+      { "q": "Can I log customers who don't use the app?", "a": "Yes. Walk-ins and phone orders are created from the same portal and follow the same stages and reports." },
+      { "q": "Is there a commission?", "a": "A clear commission on orders that come through the app, shown alongside your revenue and payouts on the finance screen." },
+      { "q": "I have several branches. Does that work?", "a": "Yes. The owner manages every branch from one account, and each branch can have a manager with the permissions you choose." },
+      { "q": "How do I organize my team?", "a": "Add your team, set each person's permissions and weekly shifts; employees handle orders from the employee app, and you close each day with a clear reconciliation." },
+      { "q": "How will I hear about new orders?", "a": "Instant browser and mobile notifications for every new order or change, even when the portal is closed." }
+    ]
+  },
+  "cta": {
+    "title": "Ready to see your car shine?",
+    "highlight": ["shine?"],
+    "lede": "Get the app and book your next wash — or list your car wash and start taking new bookings.",
+    "primary": "Get the app",
+    "secondary": "List your car wash"
+  },
+  "footer": {
+    "tagline": "The car wash booking platform — connecting drivers with the best washes around them.",
+    "platform": "Platform",
+    "partners": "Partners",
+    "contact": "Contact",
+    "join": "Become a partner",
+    "portalFeatures": "Partner portal features",
+    "rights": "All rights reserved.",
+    "made": "Made in Egypt"
+  },
+  "partnersPage": {
+    "hero": {
+      "eyebrow": "WashUp for Partners",
+      "title": "Grow your bookings. Run your wash smarter.",
+      "highlight": ["smarter."],
+      "lede": "Join the WashUp network: new customers booking from the app, plus a complete operations portal for orders, schedule, team, finance and reviews — on mobile or desktop.",
+      "apply": "Apply to join",
+      "login": "Partner login"
+    },
+    "benefits": {
+      "eyebrow": "Why WashUp",
+      "title": "Everything your car wash needs to grow",
+      "highlight": ["grow"],
+      "items": [
+        { "key": "customers", "title": "New customers every day", "body": "Your wash shows up for drivers nearby, with your services, prices and ratings." },
+        { "key": "schedule", "title": "No double bookings", "body": "Slots come from your opening hours and number of bays, and you can block any period." },
+        { "key": "live", "title": "Live operations", "body": "A live board shows every car: upcoming, waiting, in service or awaiting payment." },
+        { "key": "team", "title": "An organized team", "body": "Permissions per person, weekly shifts and an employee app to handle orders." },
+        { "key": "money", "title": "Clear numbers", "body": "Revenue, commission, net and payouts — with reports and CSV export." },
+        { "key": "reputation", "title": "A stronger reputation", "body": "Reply to reviews and report abusive ones to the WashUp team." }
+      ]
+    },
+    "tour": {
+      "eyebrow": "Inside the partner portal",
+      "title": "One portal for every detail of your day",
+      "highlight": ["One", "portal"],
+      "tabs": [
+        {
+          "key": "live",
+          "label": "Live board",
+          "title": "Every car exactly where it should be",
+          "points": ["Clear columns from booking to payment", "Busy and free bays at a glance", "Alerts for overdue orders", "The next action in one tap"]
+        },
+        {
+          "key": "orders",
+          "label": "Bookings & orders",
+          "title": "App, walk-in and phone — one list",
+          "points": ["Confirm bookings in bulk", "New orders in seconds with plate or phone recognition", "Discounts within each employee's limit", "A full history for every order"]
+        },
+        {
+          "key": "team",
+          "label": "Team & shifts",
+          "title": "An organized team that knows its role",
+          "points": ["Owner, branch manager and employee roles", "Weekly shifts for every employee", "Shift handover and review", "Day closing with a clear reconciliation"]
+        },
+        {
+          "key": "finance",
+          "label": "Finance & reports",
+          "title": "Know exactly what your wash earned",
+          "points": ["Revenue, commission and net", "Pending and received payouts", "Reports by date range with CSV export", "Team and service performance"]
+        }
+      ]
+    },
+    "onboarding": {
+      "eyebrow": "How to join",
+      "title": "From application to first booking in days",
+      "highlight": ["first", "booking"],
+      "items": [
+        { "title": "Apply", "body": "Your car wash, branches and contact details." },
+        { "title": "Review", "body": "Our team checks your license, location, photos, services, prices and hours." },
+        { "title": "Set up", "body": "Add your branches, services, team and booking rules." },
+        { "title": "First booking", "body": "Your wash appears in the app and orders start coming in." }
+      ]
+    },
+    "roles": {
+      "eyebrow": "A screen for every role",
+      "title": "Permissions that fit your team",
+      "highlight": ["fit"],
+      "items": [
+        { "key": "owner", "title": "Owner", "body": "Every branch, settings, services and offers, permissions and finance." },
+        { "key": "manager", "title": "Branch manager", "body": "Their branch only: operations, bookings, team and shifts within their permissions." },
+        { "key": "employee", "title": "Employee", "body": "The employee app: receive orders, deliver the service, hand over the shift." }
+      ]
+    },
+    "cta": {
+      "title": "Make your wash the first choice in your area",
+      "highlight": ["first", "choice"],
+      "lede": "Apply to join and our team will contact you to set up your account.",
+      "primary": "Apply to join",
+      "secondary": "Partner login"
+    }
+  }
+}
