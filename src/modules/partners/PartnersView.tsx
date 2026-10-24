@@ -48,7 +48,7 @@ export function PartnersView() {
   const t = useTranslations("partnersPage");
   const faq = useTranslations("faq");
   const locale = useLocale() as "ar" | "en";
-  const applyHref = `mailto:${SITE.partnersEmail}?subject=${encodeURIComponent(locale === "ar" ? "طلب انضمام مغسلة إلى WashUp" : "WashUp partner application")}`;
+  const applyHref = SITE.partnerRegisterUrl;
 
   const benefits = t.raw("benefits.items") as Item[];
   const roles = t.raw("roles.items") as Item[];
