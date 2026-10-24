@@ -8,7 +8,7 @@ export const SITE = {
   /** Partner portal (vendor app on Vercel). */
   partnerPortalUrl: "https://washup-vendor.vercel.app/login",
   /** Partner application registration URL. */
-  partnerRegisterUrl: process.env.NEXT_PUBLIC_VENDOR_REGISTER_URL || "http://localhost:3200/register",
+  partnerRegisterUrl: process.env.NEXT_PUBLIC_VENDOR_REGISTER_URL || "https://washup-vendor.vercel.app/register",
   /** TODO: real store listings once the customer app is published. */
   appStoreUrl: "#download",
   playStoreUrl: "#download",
