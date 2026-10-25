@@ -98,7 +98,7 @@ export function TeamMock({ locale }: { locale: Locale }) {
       </div>
       <div className="mt-3 flex items-center gap-2 rounded-xl border border-[#bbf7d0] bg-[#f0fdf4] px-3 py-2 text-[10.5px] font-semibold text-[#15803d]">
         <CircleCheck className="size-4" />
-        {L(locale, "تم تسليم وردية الصباح — الفرق 0 ج.م", "Morning shift handed over — difference 0 EGP")}
+        {L(locale, "وردية الصبح اتسلّمت، والفرق 0 ج.م", "Morning shift handed over, difference 0 EGP")}
       </div>
     </Window>
   );
@@ -135,7 +135,7 @@ export function FinanceMock({ locale }: { locale: Locale }) {
       </div>
       <div className="mt-3 flex items-center gap-2 rounded-xl border border-[#e1e8f1] bg-white px-3 py-2 text-[10.5px]">
         <Clock className="size-4 text-[#f59e0b]" />
-        <span className="flex-1 font-semibold">{L(locale, "دفعة مستحقة — الأحد", "Payout due — Sunday")}</span>
+        <span className="flex-1 font-semibold">{L(locale, "دفعة مستحقة يوم الأحد", "Payout due on Sunday")}</span>
         <span className="num font-bold">
           12,600 <span className="text-[9px] font-normal text-[#5f6b80]">{L(locale, "ج.م", "EGP")}</span>
         </span>
