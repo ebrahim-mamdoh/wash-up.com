@@ -20,27 +20,44 @@ function PlayGlyph() {
   );
 }
 
-/** App Store / Google Play buttons. Links come from SITE (placeholders until the app is published). */
+/**
+ * App Store / Google Play buttons. Links come from SITE (env). A store without a listing yet
+ * renders as a non-link badge with "coming soon" (GAP-058) instead of linking back to the page.
+ */
 export function StoreBadges({ className = "" }: { className?: string }) {
   const t = useTranslations("download");
   const badge =
-    "group inline-flex h-14 items-center gap-3 rounded-2xl bg-[#0b1b3a] px-5 text-white shadow-[0_14px_30px_-14px_rgba(11,27,58,.8)] ring-1 ring-white/10 transition-transform duration-300 ease-[var(--ease-out-expo)] hover:-translate-y-0.5";
+    "group inline-flex h-14 items-center gap-3 rounded-2xl bg-[#0b1b3a] px-5 text-white shadow-[0_14px_30px_-14px_rgba(11,27,58,.8)] ring-1 ring-white/10 transition-transform duration-300 ease-[var(--ease-out-expo)]";
+  const stores = [
+    { key: "appStore", href: SITE.appStoreUrl, glyph: <AppleGlyph /> },
+    { key: "googlePlay", href: SITE.playStoreUrl, glyph: <PlayGlyph /> },
+  ] as const;
+  const missing = stores.some((s) => !s.href);
   return (
-    <div className={`flex flex-wrap gap-3 ${className}`}>
-      <a href={SITE.appStoreUrl} className={badge} aria-label={`${t("getOn")} ${t("appStore")}`}>
-        <AppleGlyph />
-        <span className="text-start leading-tight">
-          <span className="block text-[11px] text-white/70">{t("getOn")}</span>
-          <span className="block text-[17px] font-bold" dir="ltr">{t("appStore")}</span>
-        </span>
-      </a>
-      <a href={SITE.playStoreUrl} className={badge} aria-label={`${t("getOn")} ${t("googlePlay")}`}>
-        <PlayGlyph />
-        <span className="text-start leading-tight">
-          <span className="block text-[11px] text-white/70">{t("getOn")}</span>
-          <span className="block text-[17px] font-bold" dir="ltr">{t("googlePlay")}</span>
-        </span>
-      </a>
+    <div>
+      <div className={`flex flex-wrap gap-3 ${className}`}>
+        {stores.map((s) => {
+          const body = (
+            <>
+              {s.glyph}
+              <span className="text-start leading-tight">
+                <span className="block text-[11px] text-white/70">{s.href ? t("getOn") : t("soonShort")}</span>
+                <span className="block text-[17px] font-bold" dir="ltr">{t(s.key)}</span>
+              </span>
+            </>
+          );
+          return s.href ? (
+            <a key={s.key} href={s.href} className={`${badge} hover:-translate-y-0.5`} aria-label={`${t("getOn")} ${t(s.key)}`}>
+              {body}
+            </a>
+          ) : (
+            <span key={s.key} className={`${badge} cursor-default opacity-80`} aria-disabled="true" title={t("soon")}>
+              {body}
+            </span>
+          );
+        })}
+      </div>
+      {missing ? <p className="mt-2 text-center text-[13px] opacity-70 lg:text-start">{t("soon")}</p> : null}
     </div>
   );
 }

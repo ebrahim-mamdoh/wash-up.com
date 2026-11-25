@@ -1,18 +1,23 @@
 /**
- * Site-wide links in one place. Values marked TODO are placeholders until the
- * real ones exist (store listings, contact inbox) — swap them here only.
+ * Site-wide links in one place, overridable per deployment through env vars (GAP-058, GAP-101).
+ * Store links stay null until the apps are live — the badges then say "coming soon" instead of
+ * linking back to the page.
  */
+const env = (v: string | undefined) => (v && v.trim() ? v.trim().replace(/\/$/, "") : null);
+
+const portal = env(process.env.NEXT_PUBLIC_VENDOR_PORTAL_URL) ?? "https://washup-vendor.vercel.app";
+
 export const SITE = {
   name: "WashUp",
-  url: "https://washup-eg.vercel.app", // TODO: switch to the custom domain once it is bought
-  /** Partner portal (vendor app on Vercel). */
-  partnerPortalUrl: "https://washup-vendor.vercel.app/login",
+  /** Canonical origin (metadata, Open Graph). Set NEXT_PUBLIC_SITE_URL to the custom domain when bought. */
+  url: env(process.env.NEXT_PUBLIC_SITE_URL) ?? "https://washup-eg.vercel.app",
+  /** Partner portal (vendor app). */
+  partnerPortalUrl: `${portal}/login`,
   /** Partner application registration URL. */
-  partnerRegisterUrl: process.env.NEXT_PUBLIC_VENDOR_REGISTER_URL || "https://washup-vendor.vercel.app/register",
-  /** TODO: real store listings once the customer app is published. */
-  appStoreUrl: "#download",
-  playStoreUrl: "#download",
-  /** TODO: real partner sales inbox. */
-  partnersEmail: "partners@washup.app",
-  supportEmail: "support@washup.app",
+  partnerRegisterUrl: env(process.env.NEXT_PUBLIC_VENDOR_REGISTER_URL) ?? `${portal}/register`,
+  /** Store listings of the customer app; null = not published yet. */
+  appStoreUrl: env(process.env.NEXT_PUBLIC_APP_STORE_URL),
+  playStoreUrl: env(process.env.NEXT_PUBLIC_PLAY_STORE_URL),
+  partnersEmail: env(process.env.NEXT_PUBLIC_PARTNERS_EMAIL) ?? "partners@washup.app",
+  supportEmail: env(process.env.NEXT_PUBLIC_SUPPORT_EMAIL) ?? "support@washup.app",
 } as const;
