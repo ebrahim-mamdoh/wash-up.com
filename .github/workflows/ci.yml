@@ -1,0 +1,55 @@
+# PR gates (GAP-055): typecheck, lint and a production build on every pull request and on pushes to
+# main/ebrahim.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, ebrahim]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: '24' # Next.js 16 needs >= 20.9
+
+jobs:
+  checks:
+    name: typecheck + lint + build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      # The build needs no env: the NEXT_PUBLIC_* values (src/lib/site.ts) have built-in fallbacks, and
+      # without store links the badges say "coming soon". Never add real values here.
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: npm ci
+        run: npm ci --no-audit --no-fund
+
+      - name: typecheck (tsc --noEmit)
+        run: npm run typecheck
+
+      - name: lint (eslint)
+        run: npx eslint .
+
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: next-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/**', 'public/**') }}
+          restore-keys: next-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+
+      - name: build (next build)
+        run: npm run build

@@ -17,6 +17,11 @@ npm run build && npm start
 No environment variables are needed. Links that are still placeholders (store listings,
 contact inboxes, production domain) live in `src/lib/site.ts` — change them there only.
 
+**CI** (`.github/workflows/ci.yml`, GAP-055) runs on every pull request and on pushes to `main` /
+`ebrahim` (Node 24): `npm ci` → `npm run typecheck` → `npx eslint .` → `npm run build`. No secrets.
+`npm ci` needs `package-lock.json` in sync with `package.json`: after changing dependencies, commit
+the lockfile `npm install` writes.
+
 ## Stack
 
 Same toolchain as the Qhub site it is modelled on: Next.js 16 (App Router, Turbopack),
